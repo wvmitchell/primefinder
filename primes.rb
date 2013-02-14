@@ -5,32 +5,42 @@
 
 load 'functions.rb'
 
-puts "Which prime number would you like to find?"
-prime_num = gets.to_i
-prime_count = 0
-num = 2
+puts "Welcome to the prime number finder! Search for as many prime numbers as you like, then enter 0 to exit! Have fun!"
+quit = 1
 
-while true  
-  if prime?(num)
-    prime_count += 1
-  end
-  
-  if prime_count < prime_num
-    num += 1
-  else
+while true
+  puts "Which prime number would you like to find?"
+  prime_num = gets.to_i
+  if prime_num == 0
     break
   end
-end
+  prime_count = 0
+  num = 2
 
-number_output_modifier = "th"
-if prime_num % 10 == 1 && prim_num % 100 != 11
-  number_output_modifier = "st"
-elsif prime_num % 10 == 2
-  number_output_modifier = "nd"
-elsif prime_num % 10 == 3
-  number_output_modifier = "rd"
-end
+  while true  
+    if prime?(num)
+      prime_count += 1
+    end
 
-puts "The #{prime_num}#{number_output_modifier} prime number is #{num}"
+    if prime_count < prime_num
+      num += 1
+    else
+      break
+    end
+  end
+
+  number_output_modifier = "th"
+  if prime_num % 10 == 1 && prime_num % 100 != 11
+    number_output_modifier = "st"
+  elsif prime_num % 10 == 2
+    number_output_modifier = "nd"
+  elsif prime_num % 10 == 3
+    number_output_modifier = "rd"
+  end
+
+  puts "The #{prime_num}#{number_output_modifier} prime number is #{num}\n"
+end 
+
+puts "Hope you found your primes! Adios!"
 
   
