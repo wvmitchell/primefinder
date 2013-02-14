@@ -1,3 +1,8 @@
+# Will Mitchell 2013
+
+# This simple command line program prompts the user for an nth prime number to find
+# The program makes use of an externally called prime checker, and iterates through all the positive integers until it reaches the nth prime
+
 load 'functions.rb'
 
 puts "Which prime number would you like to find?"
